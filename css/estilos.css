@@ -1,0 +1,463 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-logo: #fbcc00;
+    --color-fondo: #858084;
+    --color-gris-oscuro: #1f1f1f;
+    --color-gris: #353535;
+    --color-gris-letra: #f2f2f2;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* ------------------------------ CLASES AUXILIARES ------------------------------ */
+
+.centrado{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.flexbox{
+    display: flex;
+}
+
+h1, h2, h3{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h2{
+    font-size: 1.8rem;
+}
+
+h3{
+    font-size: 1.2rem;
+}
+
+header, section{
+    padding: 0 40px;
+}
+
+header{
+    background-color: var(--color-gris-oscuro);
+    justify-content: space-between;
+}
+
+header figure img{
+    width: 650px;
+}
+
+header nav{
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -------------- codigo extraido de https://uiverse.io/WhiteNervosa/popular-ladybug-27 -------------- */
+nav a {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-right: 1px solid var(--color-logo);
+    color: var(--color-gris-letra);
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+  
+nav a:focus,
+nav a:hover {
+    color: var(--color-logo);;
+}
+  
+nav a:focus:after,
+nav a:hover:after {
+    width: 100%;
+    left: 0%;
+    
+}
+  
+nav a:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-logo);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+    
+}
+/* --------------------------------------------------------------------------------------------------- */
+
+#heroimage{
+    background-image: url(../img/fondo.jpg);
+    background-attachment: fixed;
+    background-position-y: 100px;
+    background-size: cover;
+    padding: 340px;
+    color: var(--color-logo);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#heroimage h1{
+    padding: 0 0 20px 0;
+    font-size: 2.8rem;
+}
+
+#heroimage p{
+    padding: 0 0 25px 0;
+    width: 550px;
+    font-size: 1.2rem;
+}
+
+#heroimage a{
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-gris-letra);
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 6px;
+}
+
+#heroimage a:hover{
+    background-color: rgb(45, 45, 45);
+    cursor: pointer;
+}
+
+/* ------------------------------ PRODUCCION ------------------------------ */
+
+#pyn, #reparto, #criticas{
+    padding: 40px 0;
+}
+
+#produccion{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,480px);
+    background-color: black;
+    padding: 0;
+    margin-top: 50px;
+    color: white;
+}
+
+#produccion article, #produccion figure{
+    background-color: var(--color-gris-oscuro);
+    padding: 40px;
+}
+
+#produccion article:nth-child(1){
+    grid-row: 1/span 2;
+    grid-column: 1/span 2;
+    background-image: url(../img/produccion.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#produccion article p{
+    padding: 20px 0;
+}
+
+#produccion article a{
+    background-color: var(--color-gris);
+    color: var(--color-gris-letra);
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 6px;
+}
+
+#produccion article a:hover{
+    background-color: rgb(75, 75, 75);
+    cursor: pointer;
+}
+
+#produccion div:nth-child(3){
+    background-image: url(../img/produccion1.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+#produccion div:nth-child(4){
+    background-image: url(../img/produccion2.avif);
+    background-size: cover;
+    background-position-x: -150px;
+    background-repeat: no-repeat;
+}
+
+#produccion div:nth-child(6){
+    background-image: url(../img/produccion3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#produccion div:nth-child(8){
+    grid-column: 3/span 2;
+    background-image: url(../img/produccion4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ------------------------------ REPARTO ------------------------------ */
+
+#reparto{
+    background-color: var(--color-gris);
+    color: var(--color-gris-letra);
+}
+
+#reparto div article ul{
+    padding: 20px 0;
+    margin-left: 24px;
+}
+
+#reparto div article ul li:nth-child(4n){
+    list-style-image: url(../img/pica-lista.png);
+}
+
+#reparto div article ul li:nth-child(4n-1){
+    list-style-image: url(../img/trebol-lista.png);
+}
+
+#reparto div article ul li:nth-child(4n-2){
+    list-style-image: url(../img/diamante-lista.png);
+}
+
+#reparto div article ul li:nth-child(4n-3){
+    list-style-image: url(../img/corazon-lista.png);
+}
+
+#reparto div article figure img{
+    margin: 10px;
+    width: 440px;
+    border: 10px solid var(--color-logo);
+    border-style:double;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px var(--color-logo);
+}
+
+#reparto div > article{ 
+    justify-content: space-between;
+}
+
+#reparto div article article blockquote{
+    width: 380px;
+    padding-left: 10px;
+    margin-left: 40px;
+    border-left: 8px solid white;
+}
+
+strong{
+    color: var(--color-logo);
+}
+
+/* ------------------------------ PREMIOS Y NOMINACIONES ------------------------------ */
+
+#pyn{
+    background-color: var(--color-gris-oscuro);
+    color: white;
+}
+
+#pyn div > section{
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pyn div h2{
+    padding: 0 0 40px 0;
+}
+
+#pyn div section figure img{
+    width: 350px;
+    border: 10px solid var(--color-logo);
+    border-style:double;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px var(--color-logo);
+}
+
+#pyn div section table{
+    width: 700px;
+    border-collapse: collapse;
+    border: 1px solid transparent;
+}
+
+#pyn div section table th{
+    background-color: var(--color-gris);
+    padding: 15px;
+    border: 1px solid var(--color-gris-letra);
+    font-size: 1.2rem;
+}
+
+#pyn div section table tbody tr td{
+    padding: 15px;
+    border: 1px solid var(--color-gris-letra);
+}
+
+#pyn div section table tr:nth-child(2n){
+    background-color: var(--color-gris);
+}
+
+/* ------------------------------ CRITICAS ------------------------------ */
+
+#criticas{
+    padding: 40px;
+    background-color: var(--color-gris);
+    color: white;
+}
+
+#criticas h2{
+    padding: 0 0 40px 0;
+}
+
+#criticas div div:nth-child(1){
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
+}
+
+#criticas div div:nth-child(1) article div{
+    margin-top: 10px;
+    width: 60%;
+    align-items: center;
+}
+
+#criticas div div:nth-child(1) article div p{
+    margin-left: 20px;
+}
+
+#criticas div div:nth-child(1) p{
+    padding: 0 0 10px 0;
+}
+
+#criticas div div:nth-child(1) p:nth-child(1){
+    font-size: 1.1rem;
+}
+
+#criticas div div:nth-child(1) article:nth-of-type(2) p:nth-of-type(2){
+    width: 94%;
+}
+
+#criticas div div:nth-child(1) article{
+    width:48%;
+}
+
+#criticas div div:nth-child(2) h3{
+    margin-bottom: 20px;
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(1) label:nth-child(1),
+#criticas div div:nth-child(2) div form div:nth-child(1) label:nth-child(2){
+    display: block;
+}
+
+#criticas input[type="text"],
+#criticas input[type="email"] {
+    width: 90%;
+    padding: 6px;
+    margin-bottom: 35px;
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-gris-letra);
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(1) fieldset{
+    border: 0;
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(1) fieldset input:nth-of-type(2){
+    margin-left: 20px;
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(1) input[type="checkbox"]{
+    margin-top: 35px;
+}
+
+#criticas div div:nth-child(2) div form{
+    width: 800px;
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(2){
+    align-content: flex-start;
+    width: 80%;
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(2) div{
+    width: 100%;
+}
+
+#criticas div div:nth-child(2) div form div:nth-of-type(2) div textarea{
+    height: 140px;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-gris-letra);
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(2){
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(2) input[type="submit"]{
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-gris-letra);
+    width: 50%;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 6px;
+    align-self: flex-end;
+}
+
+#criticas div div:nth-child(2) div form div:nth-child(2) input[type="submit"]:hover{
+    background-color: rgb(20, 20, 20);
+    cursor: pointer;
+}
+
+#criticas figure img{
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--color-logo);
+}
+
+#criticas q{
+    quotes: "“" "”";
+}
+
+/* ------------------------------ FOOTER ------------------------------ */
+
+footer{
+    background-color: var(--color-logo);
+    padding: 16px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+footer figure img{
+    width: 50px;
+    margin-left: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
